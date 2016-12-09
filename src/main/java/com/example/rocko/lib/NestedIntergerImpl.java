@@ -12,18 +12,18 @@ public class NestedIntergerImpl implements NestedInteger {
     private Object val;
 
 
-    public NestedIntergerImpl(Object a){
+    public NestedIntergerImpl(Object a) {
         this.val = a;
     }
 
     public boolean isInteger() {
-        
+
         return val instanceof Integer;
 
     }
 
     public Integer getInteger() {
-        return (Integer)val;
+        return (Integer) val;
     }
 
     public List<NestedInteger> getList() {
