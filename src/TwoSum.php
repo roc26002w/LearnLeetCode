@@ -2,6 +2,8 @@
 
 namespace Rocko;
 
+use Exception;
+
 class TwoSum
 {
     /**
@@ -9,15 +11,18 @@ class TwoSum
      * @param $list
      * @param $target
      * @return array
+     * @throws Exception
      */
     public function getTwoSum($list , $target)
     {
         foreach ($list as $key => $item) {
             foreach ($list as $key1 => $item1) {
-                if($item + $item1 == $target){
+                if($item + $item1 === $target){
                     return [$key , $key1];
                 }
             }
         }
+        
+        throw new Exception("Answer Not Found");
     }
 }

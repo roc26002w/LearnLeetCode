@@ -2,6 +2,7 @@
 
 namespace Rocko;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -50,5 +51,20 @@ class TwoSumTest extends TestCase
         
         //Assert
         $this->assertEquals([0, 2], $actual);
+    }
+    
+    /**
+     * @group TwoSum
+     * @test
+     * @expectedException Exception
+     * @expectedExceptionMessage Answer Not Found
+     */
+    public function give_2_7_11_15_and_target_31_and_return_exception()
+    {
+        //Arrange
+        
+        //Act
+        $this->twoSum->getTwoSum([2, 7, 11, 15], 31);
+        
     }
 }
