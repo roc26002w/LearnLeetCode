@@ -36,4 +36,19 @@ class TwoSumTest extends TestCase
         //Assert
         $this->assertEquals([0, 1], $actual);
     }
+    
+    /**
+     * @group TwoSum
+     * @test
+     */
+    public function give_2_7_11_15_and_target_13_and_return_0_2()
+    {
+        //Arrange
+        
+        //Act
+        $actual = $this->twoSum->getTwoSum([2, 7, 11, 15], 13);
+        
+        //Assert
+        $this->assertEquals([0, 2], $actual);
+    }
 }
