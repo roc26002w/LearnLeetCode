@@ -1,0 +1,20 @@
+{
+    "name": "rocko/learn-leet-code",
+    "description": "學習LeetCode",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rocko UrAD",
+            "email": "roc26002w@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0.0",
+        "phpunit/phpunit": "5.5.*"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Rocko\\" : "src/"
+        }
+    }
+}
