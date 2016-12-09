@@ -10,4 +10,8 @@ class InvertBinaryTree
     public function __construct()
     {
     }
+    
+    public function invertTree($array)
+    {
+    }
 }

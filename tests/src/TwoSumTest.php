@@ -15,11 +15,12 @@ use PHPUnit\Framework\TestCase;
  */
 class TwoSumTest extends TestCase
 {
+    /** @var  twoSum */
     protected $twoSum;
     
     public function setUp()
     {
-        /** @var  twoSum */
+        
         $this->twoSum = new TwoSum();
     }
     

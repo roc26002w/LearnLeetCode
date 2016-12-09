@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
  */
 class InvertBinaryTreeTest extends TestCase
 {
+    /** @var  InvertBinaryTree */
     protected $invertBinaryTree;
     
     public function setUp()
