@@ -15,14 +15,18 @@ class TwoSum
      */
     public function getTwoSum($list , $target)
     {
+        $tmpList = [];
+        
         foreach ($list as $key => $item) {
-            foreach ($list as $key1 => $item1) {
-                if($item + $item1 === $target){
-                    return [$key , $key1];
-                }
+            $complate = $target - $item;
+            if(key_exists($complate,$tmpList)){
+                return [$tmpList[$complate] , $key];
             }
+        
+            $tmpList[$item] = $key;
         }
         
         throw new Exception("Answer Not Found");
+        
     }
 }
