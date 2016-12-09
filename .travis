@@ -1,0 +1,11 @@
+language: php
+php:
+- 7.0
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+before_install:
+  - composer self-update
