@@ -4,29 +4,18 @@ namespace Rocko;
 
 class InvertBinaryTree
 {
-    /**
-     * InvertBinaryTree constructor.
-     */
-    public function __construct()
+    public function invertTree($originTree)
     {
-    }
-    
-    public function invertTree(Array $originTree): Array
-    {
-        
-        $tmpTree = [];
-        foreach ($originTree as $key => $item) {
-            if ($key > 0) {
-                if ($key % 2 == 1) {
-                    array_push($tmpTree, $item);
-                    if(!is_null($originTree[$key + 1])){
-                        $originTree[$key] = $originTree[$key + 1];
-                    }
-                } else {
-                    $originTree[$key] = array_pop($tmpTree);
-                }
-            }
+        if (is_null($originTree)) {
+            return null;
         }
+        
+        $tmp = $originTree->left;
+        $originTree->left = $originTree->right;
+        $originTree->right = $tmp;
+        
+        $this->invertTree($originTree->left);
+        $this->invertTree($originTree->right);
         
         return $originTree;
         
