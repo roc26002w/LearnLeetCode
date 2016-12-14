@@ -13,32 +13,45 @@ public class BasicCalculator {
 
         int sign = 1;
 
-        Stack<Integer> stack =  new Stack();
+        boolean flag = true;
 
-        for (int i = 0 ; i < s.length() ; i ++){
+        String tmp="";
 
-            if(Character.isDigit(s.charAt(i))){
-                System.out.println(s.charAt(i));
-                result += sign * Character.getNumericValue(s.charAt(i));
-            } else if(String.valueOf(s.charAt(i)).equals("+")){
-                sign = 1;
+        Stack<Integer> stack = new Stack();
 
-            } else if(String.valueOf(s.charAt(i)).equals("-")){
-                sign = -1;
+        for (int i = 0; i < s.length(); i++) {
 
-            } else if(String.valueOf(s.charAt(i)).equals("(")){
+            if (String.valueOf(s.charAt(i)).equals("(")) {
                 stack.push(result);
                 stack.push(sign);
                 sign = 1;
                 result = 0;
+                flag = false;
 
-            } else if(String.valueOf(s.charAt(i)).equals(")")){
-                result =  stack.pop() * result + stack.pop();
+            } else if (String.valueOf(s.charAt(i)).equals(")")) {
+                result = stack.pop() * result + stack.pop();
+                flag = false;
+
+            } else if (String.valueOf(s.charAt(i)).equals("+")) {
+                sign = 1;
+                flag = false;
+
+            } else if (String.valueOf(s.charAt(i)).equals("-")) {
+                sign = -1;
+                flag = false;
+
+            } else if (Character.isDigit(s.charAt(i))) {
+
+                tmp += s.charAt(i);
+                result += sign * Character.getNumericValue(s.charAt(i));
+
             }
 
         }
 
-        System.out.println(result);
+        if (flag == true) {
+            result = Integer.valueOf(tmp).intValue();
+        }
 
         return result;
     }
