@@ -27,4 +27,16 @@ public class BasicCalculatorTest {
 
     }
 
+    @Test
+    public void enterString1_2_2andReturn3() {
+
+        String s = " 2-1 + 2 ";
+        Integer act = basicCalculator.calculate(s);
+
+        Assert.assertEquals(3, act.intValue());
+
+
+    }
+
+
 }
