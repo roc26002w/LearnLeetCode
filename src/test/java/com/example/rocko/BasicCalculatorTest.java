@@ -73,4 +73,15 @@ public class BasicCalculatorTest {
 
     }
 
+    @Test
+    public void enterString1_11andReturn_10() {
+
+        String s = "1-11";
+        Integer act = basicCalculator.calculate(s);
+
+        Assert.assertEquals(-10, act.intValue());
+
+
+    }
+
 }
