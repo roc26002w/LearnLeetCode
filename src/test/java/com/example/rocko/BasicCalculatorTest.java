@@ -50,4 +50,27 @@ public class BasicCalculatorTest {
 
     }
 
+    @Test
+    public void enterString2147483647andReturn2147483647() {
+
+        String s = "2147483647";
+        Integer act = basicCalculator.calculate(s);
+
+        Assert.assertEquals(2147483647, act.intValue());
+
+
+    }
+
+
+    @Test
+    public void enterString_30andReturn30() {
+
+        String s = "  30";
+        Integer act = basicCalculator.calculate(s);
+
+        Assert.assertEquals(30, act.intValue());
+
+
+    }
+
 }
