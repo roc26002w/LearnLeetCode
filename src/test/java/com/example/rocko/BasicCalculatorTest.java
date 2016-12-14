@@ -39,4 +39,15 @@ public class BasicCalculatorTest {
     }
 
 
+    @Test
+    public void enterString1_4_5_2_3_6_8andReturn23() {
+
+        String s = "(1+(4+5+2)-3)+(6+8)";
+        Integer act = basicCalculator.calculate(s);
+
+        Assert.assertEquals(23, act.intValue());
+
+
+    }
+
 }
