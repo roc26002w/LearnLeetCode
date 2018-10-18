@@ -1,5 +1,6 @@
 package com.example.rocko;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +8,7 @@ import org.junit.Test;
 /**
  * Created by Rocko on 2016/12/14.
  */
+@Slf4j
 public class BasicCalculatorTest {
 
     private BasicCalculator basicCalculator;
@@ -20,6 +22,9 @@ public class BasicCalculatorTest {
     public void enterString1_1andReturn2() {
 
         String s = "1 + 1";
+
+        log.info("s : {}", s );
+
         Integer act = basicCalculator.calculate(s);
 
         Assert.assertEquals(2, act.intValue());
